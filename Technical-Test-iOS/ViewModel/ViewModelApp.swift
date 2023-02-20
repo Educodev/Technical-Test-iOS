@@ -10,11 +10,23 @@ import Combine
 @MainActor
 public class ViewModelApp: ObservableObject {
     @Published var beers: Beers = []
-    func loadBears() {
+    @Published var page = 1
+    @Published var refreshPosition = 0
+    @Published var isLoad = false
+    
+    func loadBeers(_ parameters: Parameters) {
         Task {
             do {
-                //We pass the beers received from the server
-                self.beers = try await getBeers(otherParameters: .none)
+                //indicates that the data is being loaded
+                isLoad.toggle()
+                //The service container will be incremented every time we make a call to the server
+                self.beers += try await getBeers(page, otherParameters: parameters)
+                //page increment
+                page+=1
+                //I set the value so that the view knows where to position the progressview
+                refreshPosition = 1
+                //indicates that the data has already been loaded
+                isLoad.toggle()
             } catch let error {
                 let servicesError = error as! ServicesError
                 //Show error in a alertView

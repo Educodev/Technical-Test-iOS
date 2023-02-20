@@ -38,8 +38,7 @@ func getBeers(_ page: Int = 1, perPage: Int = 20, otherParameters: Parameters) a
 }
 
 fileprivate func setupUrl(_ page: Int, _ perPage: Int, _ otherParameters: Parameters) -> String {
-    var urlString = "https://api.punkapi.com/v2/beers?page=\(page)&per_page=\(perPage)"
-    
+    let urlString = "https://api.punkapi.com/v2/beers?page=\(page)&per_page=\(perPage)"
     return urlString
 }
 
