@@ -8,14 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    //viewModel reference
+    @EnvironmentObject var viewModel: ViewModelApp
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            List (viewModel.beers) { beer in
+                Text(beer.name)
+            }
+            .onAppear {
+                DispatchQueue.main.async {
+                    viewModel.loadBears()
+                }
+                
         }
-        .padding()
+            
+            if viewModel.beers.isEmpty {
+                ProgressView()
+            }
+        }
     }
 }
 
