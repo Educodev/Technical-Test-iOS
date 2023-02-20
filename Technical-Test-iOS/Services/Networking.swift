@@ -16,6 +16,7 @@ enum ServicesError: Error {
 
 enum Parameters {
     case none
+    case beerName(_: String)
     
 }
 
@@ -38,7 +39,13 @@ func getBeers(_ page: Int = 1, perPage: Int = 20, otherParameters: Parameters) a
 }
 
 fileprivate func setupUrl(_ page: Int, _ perPage: Int, _ otherParameters: Parameters) -> String {
-    let urlString = "https://api.punkapi.com/v2/beers?page=\(page)&per_page=\(perPage)"
+    var urlString = "https://api.punkapi.com/v2/beers?page=\(page)&per_page=\(perPage)"
+    switch otherParameters {
+    case .none:
+        return urlString
+    case .beerName(let name):
+        urlString+="&beer_name=\(name)"
+    }
     return urlString
 }
 
