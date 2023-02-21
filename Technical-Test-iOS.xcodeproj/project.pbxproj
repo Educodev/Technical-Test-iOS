@@ -18,6 +18,7 @@
 		E9C3C00C29A3D9DA008F2E53 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C3C00B29A3D9DA008F2E53 /* Networking.swift */; };
 		E9C3C00E29A3E1FF008F2E53 /* ViewModelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C3C00D29A3E1FF008F2E53 /* ViewModelApp.swift */; };
 		E9C3C01129A40767008F2E53 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C3C01029A40767008F2E53 /* HomeView.swift */; };
+		E9C3C01329A42D0A008F2E53 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C3C01229A42D0A008F2E53 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		E9C3C00B29A3D9DA008F2E53 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		E9C3C00D29A3E1FF008F2E53 /* ViewModelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelApp.swift; sourceTree = "<group>"; };
 		E9C3C01029A40767008F2E53 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E9C3C01229A42D0A008F2E53 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			children = (
 				E9C3BFDA29A3C126008F2E53 /* ContentView.swift */,
 				E9C3C01029A40767008F2E53 /* HomeView.swift */,
+				E9C3C01229A42D0A008F2E53 /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				E9C3C00E29A3E1FF008F2E53 /* ViewModelApp.swift in Sources */,
 				E9C3BFDB29A3C126008F2E53 /* ContentView.swift in Sources */,
 				E9C3C00A29A3D987008F2E53 /* Beers.swift in Sources */,
+				E9C3C01329A42D0A008F2E53 /* DetailView.swift in Sources */,
 				E9C3C01129A40767008F2E53 /* HomeView.swift in Sources */,
 				E9C3BFD929A3C126008F2E53 /* Technical_Test_iOSApp.swift in Sources */,
 				E9C3C00C29A3D9DA008F2E53 /* Networking.swift in Sources */,
