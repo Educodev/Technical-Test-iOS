@@ -16,9 +16,9 @@ import Foundation
 struct Beer: Codable, Identifiable {
     let id: Int
     let name: String
-   // let tagline: String?
-   // let firstBrewed: String?
-   // let description: String?
+    let tagline: String
+    let firstBrewed: String
+    let description: String
     let imageURL: String?
    // let abv: Double?
    // let ibu: Int?
@@ -31,17 +31,17 @@ struct Beer: Codable, Identifiable {
    // let volume: BoilVolume?
    // let boilVolume: BoilVolume?
    // let method: Method?
-    let ingredients: Ingredients?
-   // let foodPairing: [String]?
+    let ingredients: Ingredients
+    let foodPairing: [String]
    // let brewersTips: String?
    // let contributedBy: ContributedBy?
 
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case name = "name"
-       // case tagline = "tagline"
-       // case firstBrewed = "first_brewed"
-       // case description = "description"
+        case tagline = "tagline"
+        case firstBrewed = "first_brewed"
+        case description = "description"
         case imageURL = "image_url"
        // case abv = "abv"
        // case ibu = "ibu"
@@ -55,7 +55,7 @@ struct Beer: Codable, Identifiable {
        // case boilVolume = "boil_volume"
        // case method = "method"
         case ingredients = "ingredients"
-       // case foodPairing = "food_pairing"
+        case foodPairing = "food_pairing"
        // case brewersTips = "brewers_tips"
        // case contributedBy = "contributed_by"
     }
@@ -78,9 +78,9 @@ enum ContributedBy: String, Codable {
 
 // MARK: - Ingredients
 struct Ingredients: Codable {
-    let malt: [Malt]?
-    let hops: [Hop]?
-    let yeast: String?
+    let malt: [Malt]
+    let hops: [Hop]
+    let yeast: String
 
     enum CodingKeys: String, CodingKey {
         case malt = "malt"

@@ -15,6 +15,7 @@ public class ViewModelApp: ObservableObject {
     @Published var refreshPosition = 0
     @Published var isLoad = false
     @Published var searchText = ""
+    @Published var sectioSegment = 0
     
     func loadBeers(_ parameters: Parameters) {
         

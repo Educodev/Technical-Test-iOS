@@ -17,6 +17,7 @@ enum ServicesError: Error {
 enum Parameters {
     case none
     case beerName(_: String)
+    case foodName(_: String)
     
 }
 
@@ -45,6 +46,8 @@ fileprivate func setupUrl(_ page: Int, _ perPage: Int, _ otherParameters: Parame
         return urlString
     case .beerName(let name):
         urlString+="&beer_name=\(name)"
+    case .foodName(let name):
+        urlString+="&food=\(name)"
     }
     return urlString
 }
