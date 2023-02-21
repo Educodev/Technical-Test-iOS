@@ -17,7 +17,11 @@ struct HomeView: View {
             //I use the ternary operator to reuse the progressview and only change the position depending on whether the beers array is empty or loaded
             ZStack(alignment: viewModel.refreshPosition == 0 ? .center : .bottom) {
                 List (!viewModel.searchText.isEmpty ? viewModel.beersByName : viewModel.beers) { beer in
-                    Text(String(beer.id)+" "+beer.name)
+                    NavigationLink(destination: {
+                        DetailView(beer: beer)
+                    }, label: {
+                        Text(String(beer.id)+" "+beer.name)
+                    })
                         .onAppear {
                             //When I scroll through the list and the last element of the beers array appears, then the method will be loaded again but with one more page
                             if beer.id == viewModel.beers.count {
@@ -32,7 +36,10 @@ struct HomeView: View {
                 .offset(y: viewModel.isLoad ? -5 : 0)
                 .onAppear {
                     withAnimation {
-                        viewModel.loadBeers(.none)
+                        //to charge only once
+                        if viewModel.beers.isEmpty {
+                            viewModel.loadBeers(.none)
+                        }
                     }
                 }
                 .searchable(text: $viewModel.searchText)

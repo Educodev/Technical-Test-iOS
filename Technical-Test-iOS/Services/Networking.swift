@@ -32,7 +32,7 @@ func getBeers(_ page: Int = 1, perPage: Int = 20, otherParameters: Parameters) a
         
     } catch {
         //TODO: - remove this line of code after debugging
-        fatalError(error.localizedDescription)
+        //fatalError(error.localizedDescription)
         throw ServicesError.decodeJsonError
         
     }
