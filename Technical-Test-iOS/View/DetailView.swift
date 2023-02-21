@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DetailView: View {
     @Environment(\.dismiss) var dismiss
+    @Environment(\.colorScheme) var scheme
+    
     
     let beer: Beer
     
@@ -115,7 +117,7 @@ struct DetailView: View {
                         
                     }
                     .padding([.bottom, .horizontal])
-                    .background(.white)
+                    .background(scheme == .dark ? .black : .white)
                     .cornerRadius(10)
                     .padding(.top, UIScreen.main.bounds.width )
                     
@@ -133,7 +135,7 @@ struct DetailView: View {
                     .resizable()
                     .frame(width: 50, height: 50)
                     .shadow(radius: 8)
-                    .tint(.black)
+                    .tint(.primary)
             }.padding(30)
             
         }
